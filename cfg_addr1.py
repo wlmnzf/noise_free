@@ -196,7 +196,7 @@ def getnode(path):
                     nodenamelist.append(nodename)
                     
                 
-                record_file_path="/mnt/d/WSL/noise/src0.c.out.txt"
+                record_file_path="/home/william/noise_free/src0.c.out.txt"
 
                 branch_misses_feature=0.0001
                 cache_misses_feature=0.0001
@@ -393,7 +393,7 @@ def splitblock(edgelist,index_dict,node_dict):
 
 
 all_file_list=[]
-get_all_filepath("/mnt/d/WSL/noise")
+get_all_filepath("/home/william/noise_free")
 # print(all_file_list)
 for path in all_file_list:
     print(path)
@@ -444,9 +444,9 @@ for path in all_file_list:
     csvFile=open("./target.csv",'w',newline='')
     try:
         writer=csv.writer(csvFile)
-        writer.writerow(('node_id','target'))
+        writer.writerow(('node_id','target','node_content'))
         for i in node_dict:
-            writer.writerow((mapindex[node_dict[i]["index"]],node_dict[i]["labelx"]))
+            writer.writerow((mapindex[node_dict[i]["index"]],node_dict[i]["labelx"],node_dict[i]["label"]))
     finally:
         csvFile.close()
 
