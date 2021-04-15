@@ -140,7 +140,7 @@ def getnode(path):
         for edge in edges:
             pt=edges[edge][0]["points"]
             attr=edges[edge][0]["attributes"]
-            color="black"
+            color="black" 
             style="straight"
             if(len(attr)>0 and "color" in attr):
                 color=attr["color"]
